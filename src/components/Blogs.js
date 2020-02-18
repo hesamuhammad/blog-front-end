@@ -17,20 +17,19 @@ class Blogs extends Component {
         console.log(data, "data");
 
         return (
-            <div>
+            <Container fluid={true}>
                 <Navbar />
                 <Row style={{ marginTop: "3em" }}>
                     {data.map(item => {
                         return (
-                            <Container
+                            <Col
+                                xs={12}
                                 key={item.id}
-                                className="themed-container"
-                                fluid="lg"
                                 style={{
                                     display: "flex",
                                     justifyContent: "center",
-                                    paddingLeft: "7%",
-                                    paddingRight: "7%",
+                                    paddingLeft: "5%",
+                                    paddingRight: "5%",
                                     marginBottom: "5%"
                                 }}
                             >
@@ -81,11 +80,11 @@ class Blogs extends Component {
                                         </Col>
                                     </Row>
                                 </Col>
-                            </Container>
+                            </Col>
                         );
                     })}
                 </Row>
-            </div>
+            </Container>
         );
     }
 }
