@@ -27,7 +27,8 @@ export const fetchBlogs = () => (dispatch, getState) => {
 
         return axios({
             method: "GET",
-            url: "https://blog-database-mashes.herokuapp.com/login",
+            // url: "https://blog-database-mashes.herokuapp.com/login",
+            url: `${heroku}login`,
             headers: { authorization: `Bearer ${token}` }
         }).then(response => [dispatch(setBlog(response.data.data))]);
     }
@@ -36,11 +37,9 @@ export const fetchBlogs = () => (dispatch, getState) => {
 export const fetchDataBlogs = () => dispatch => {
     console.log("masuk");
 
-    return axios
-        .get("https://blog-database-mashes.herokuapp.com/blogs")
-        .then(res => {
-            console.log(res, "res");
+    return axios.get(`${heroku}blogs`).then(res => {
+        console.log(res, "res");
 
-            dispatch(getBlog(res.data.data));
-        });
+        dispatch(getBlog(res.data.data));
+    });
 };
