@@ -34,12 +34,12 @@ function Copyright() {
 
 const useStyles = makeStyles(theme => ({
     root: {
-        height: "100vh",
+        height: "100vh"
     },
     image: {
         backgroundImage: "url(https://source.unsplash.com/random)",
         backgroundRepeat: "no-repeat",
-        backgroundColor: 
+        backgroundColor:
             theme.palette.type === "dark"
                 ? theme.palette.grey[900]
                 : theme.palette.grey[50],
@@ -47,12 +47,13 @@ const useStyles = makeStyles(theme => ({
         backgroundPosition: "center"
     },
     paper: {
-        margin: theme.spacing(8, 4),
+        margin: theme.spacing(12, 4),
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         padding: "5%",
-        backgroundColor: "#fbefd2", borderRadius: "5%"
+        backgroundColor: "#fbefd2",
+        borderRadius: "5%"
     },
     avatar: {
         margin: theme.spacing(5),
@@ -60,7 +61,7 @@ const useStyles = makeStyles(theme => ({
     },
     form: {
         width: "100%", // Fix IE 11 issue.
-        marginTop: theme.spacing(2),
+        marginTop: theme.spacing(2)
     },
     submit: {
         margin: theme.spacing(3, 0, 3),
@@ -92,7 +93,10 @@ function SignIn(props) {
                         Sign in
                     </Typography>
                     <Formik
-                        initialValues={{ email: "hesahesa30@icloud.com", password: "1234" }}
+                        initialValues={{
+                            email: "hesahesa30@icloud.com",
+                            password: "1234"
+                        }}
                         onSubmit={(values, actions) => {
                             props.login(values, props.history);
                         }}

@@ -3,6 +3,8 @@ import axios from "axios";
 export const SET_BLOGS = "SET_BLOGS";
 export const GET_BLOGS = "GET_BLOGS";
 
+const heroku = process.env.REACT_APP_URL_EXPRESS;
+
 export const setBlog = payload => {
     return {
         type: SET_BLOGS,
@@ -25,7 +27,7 @@ export const fetchBlogs = () => (dispatch, getState) => {
 
         return axios({
             method: "GET",
-            url: "http://localhost:3030/blogusers/login",
+            url: "https://blog-database-mashes.herokuapp.com/login",
             headers: { authorization: `Bearer ${token}` }
         }).then(response => [dispatch(setBlog(response.data.data))]);
     }
@@ -33,10 +35,12 @@ export const fetchBlogs = () => (dispatch, getState) => {
 
 export const fetchDataBlogs = () => dispatch => {
     console.log("masuk");
-    
-    return axios.get("http://localhost:3030/blogs").then(res => {
-        console.log(res, "res");
-        
-        dispatch(getBlog(res.data.data));
-    });
+
+    return axios
+        .get("https://blog-database-mashes.herokuapp.com/blogs")
+        .then(res => {
+            console.log(res, "res");
+
+            dispatch(getBlog(res.data.data));
+        });
 };

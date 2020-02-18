@@ -2,6 +2,8 @@ import axios from "axios";
 
 export const SET_LOGIN = "SET_LOGIN";
 
+const heroku = process.env.REACT_APP_URL_EXPRESS;
+
 export const isLogin = () => dispatch => {
     const token = localStorage.getItem("token");
 
@@ -26,7 +28,8 @@ export const setLogin = data => {
 export const login = (values, history) => dispatch => {
     return axios({
         method: "POST",
-        url: "http://localhost:3030/blogusers/login",
+        // url: "https://blog-database-mashes.herokuapp.com/blogusers/login",
+        url: `${heroku}blogusers/login`,
         data: values
     }).then(response => {
         if (response.status === 200) {

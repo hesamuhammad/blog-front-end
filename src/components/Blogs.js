@@ -21,18 +21,17 @@ class Blogs extends Component {
                 <Navbar />
                 <Row style={{ marginTop: "3em" }}>
                     {data.map(item => {
-                        console.log('item', item)
                         return (
                             <Container
-                                key={item._id}
+                                key={item.id}
                                 className="themed-container"
                                 fluid="lg"
                                 style={{
                                     display: "flex",
                                     justifyContent: "center",
-                                    paddingLeft: "10%",
-                                    paddingRight: "10%",
-                                    marginBottom: "10%"
+                                    paddingLeft: "7%",
+                                    paddingRight: "7%",
+                                    marginBottom: "5%"
                                 }}
                             >
                                 <Col>
@@ -44,23 +43,25 @@ class Blogs extends Component {
                                     >
                                         {item.title}
                                     </h1>
-                                    {/* <p>By {item.name} in News Posted {item.date}</p> */}
-                                    <h5 style={{ textAlign: "center", marginBottom: "3%"}}>
+                                    <h5
+                                        style={{
+                                            textAlign: "center",
+                                            marginBottom: "3%"
+                                        }}
+                                    >
                                         {item.subTitle}
                                     </h5>
                                     <p>{item.date}</p>
                                     <img
-                                        style={{ width: "100%", marginBottom: "3%"}}
-                                        src={`http://localhost:3030/${item.image}`}
+                                        style={{
+                                            width: "100%",
+                                            marginBottom: "3%"
+                                        }}
+                                        src={`https://blog-database-mashes.herokuapp.com/${item.image}`}
                                         alt="blogs"
                                     />
                                     <p style={{ textAlign: "justify" }}>
-                                        {item.body.split('\n').map((item,key) => {
-                                            return (
-                                                <li style={{ listStyleType: "none" }} key={key}>{item}</li>
-                                                
-                                                )
-                                        })}
+                                        {item.body}
                                     </p>
                                     <Row style={{ display: "flex" }}>
                                         <Col>
