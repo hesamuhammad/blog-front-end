@@ -24,6 +24,7 @@ class Blogs extends Component {
                         return (
                             <Col
                                 xs={12}
+                                md={{ size: 6, offset: 3 }}
                                 key={item.id}
                                 style={{
                                     display: "flex",
@@ -56,6 +57,7 @@ class Blogs extends Component {
                                             width: "100%",
                                             marginBottom: "3%"
                                         }}
+                                        // className="imageblog"
                                         src={`https://blog-database-mashes.herokuapp.com/${item.image}`}
                                         alt="blogs"
                                     />
