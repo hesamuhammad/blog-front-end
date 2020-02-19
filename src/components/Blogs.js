@@ -24,6 +24,9 @@ class Blogs extends Component {
                         const formatDate = moment(item.date).format(
                             "MMMM Do YYYY, h:mm:ss a"
                         );
+                        const shareButton = (
+                            <div class="addthis_inline_share_toolbox"></div>
+                        );
                         return (
                             <Col
                                 xs={12}
@@ -67,6 +70,9 @@ class Blogs extends Component {
                                     <p style={{ textAlign: "justify" }}>
                                         {item.body}
                                     </p>
+
+                                    {shareButton}
+
                                     <Row style={{ display: "flex" }}>
                                         <Col>
                                             <Button type="dashed" size="large">
