@@ -72,9 +72,6 @@ class Blogs extends Component {
                                         {item.body}
                                     </p>
 
-                                    {/* <!-- Go to www.addthis.com/dashboard to customize your tools --> */}
-                                    <div className="addthis_inline_share_toolbox"></div>
-
                                     {/* <Row>
                                         <Col>
                                             <Facebook
