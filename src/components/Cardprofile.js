@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        marginTop: "10%"
+        marginTop: "50px"
     },
     // root: {
     //     maxWidth: 345,
@@ -77,12 +77,12 @@ export default function Cardprofile() {
                             <MoreVertIcon />
                         </IconButton>
                     }
-                    title="Dopeness"
-                    subheader="September 30"
+                    title="mashes"
+                    subheader="a Daydreamer"
                 />
                 <CardMedia
                     className={classes.media}
-                    image="https://image.cnbcfm.com/api/v1/image/101524695-457220551.jpg?v=1395781183&w=1400&h=950"
+                    image="https://i.imgur.com/zhjsqUr.jpg"
                     title="Kobe"
                 />
                 <CardContent>
@@ -91,16 +91,26 @@ export default function Cardprofile() {
                         color="textSecondary"
                         component="p"
                     >
-                        This impressive paella is a perfect party dish and a fun
-                        meal to cook together with your guests. Add 1 cup of
-                        frozen peas along with the mussels, if you like.
+                        trying to learn how to become a full stack developer{" "}
+                        <br />
+                        <br />
+                        keep pushing my limit <br />
+                        wish me luck :)
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
+                    <IconButton
+                        aria-label="add to favorites"
+                        href="https://instagram.com/mashes88"
+                        target="_blank"
+                    >
                         <InstagramIcon />
                     </IconButton>
-                    <IconButton aria-label="share">
+                    <IconButton
+                        aria-label="share"
+                        href="https://twitter.com/mightanddope"
+                        target="_blank"
+                    >
                         <TwitterIcon />
                     </IconButton>
                     <IconButton
