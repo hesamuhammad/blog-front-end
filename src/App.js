@@ -5,8 +5,8 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Blogs from "./components/Blogs";
-import Logout from './components/Logout'
-import Contactme from "./pages/contactme";
+import Logout from "./components/Logout";
+import Mashes from "./pages/mashes";
 
 function App() {
     return (
@@ -25,10 +25,10 @@ function App() {
                     <Blogs />
                 </Route>
                 <Route path="/logout">
-                    <Logout/>
+                    <Logout />
                 </Route>
-                <Route path="/contactme">
-                    <Contactme/>
+                <Route path="/mashes">
+                    <Mashes />
                 </Route>
             </Switch>
         </Router>
