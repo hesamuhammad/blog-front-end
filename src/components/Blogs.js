@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Row, Col, Button, Container } from "reactstrap";
 // import { Button, Row,Col } from 'antd';
 import { fetchDataBlogs } from "../actions";
-
+import moment from "moment";
 class Blogs extends Component {
     componentDidMount = () => {
         this.props.fetchDataBlogs();
@@ -21,6 +21,9 @@ class Blogs extends Component {
                 <Navbar />
                 <Row style={{ marginTop: "3em" }}>
                     {data.map(item => {
+                        const formatDate = moment(item.date).format(
+                            "MMMM Do YYYY, h:mm:ss a"
+                        );
                         return (
                             <Col
                                 xs={12}
@@ -51,7 +54,7 @@ class Blogs extends Component {
                                     >
                                         {item.subTitle}
                                     </h5>
-                                    <p>{item.date}</p>
+                                    <p>{formatDate}</p>
                                     <img
                                         style={{
                                             width: "100%",
