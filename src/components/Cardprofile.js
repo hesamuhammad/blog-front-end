@@ -16,6 +16,9 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Container from "@material-ui/core/Container";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import EmailIcon from "@material-ui/icons/Email";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -64,9 +67,10 @@ export default function Cardprofile() {
             <Card className={classes.root}>
                 <CardHeader
                     avatar={
-                        <Avatar aria-label="recipe" className={classes.avatar}>
-                            Hes
-                        </Avatar>
+                        <Avatar
+                            aria-label="recipe"
+                            className={classes.avatar}
+                        ></Avatar>
                     }
                     action={
                         <IconButton aria-label="settings">
@@ -94,10 +98,10 @@ export default function Cardprofile() {
                 </CardContent>
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
-                        <FavoriteIcon />
+                        <InstagramIcon />
                     </IconButton>
                     <IconButton aria-label="share">
-                        <ShareIcon />
+                        <TwitterIcon />
                     </IconButton>
                     <IconButton
                         className={clsx(classes.expand, {
