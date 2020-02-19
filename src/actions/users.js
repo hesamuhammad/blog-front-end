@@ -39,3 +39,16 @@ export const login = (values, history) => dispatch => {
         }
     });
 };
+
+export const signup = (values, history) => dispatch => {
+    return axios({
+        method: "POST",
+        url: `${heroku}blogusers`,
+        data: values
+    }).then(response => {
+        if (response.status === 200) {
+            alert("Registration Succeded");
+            history.push("/");
+        }
+    });
+};
