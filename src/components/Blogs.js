@@ -18,7 +18,7 @@ class Blogs extends Component {
         return (
             <Container fluid={true}>
                 <Navbar />
-                <Row style={{ marginTop: "3em" }}>
+                <Row style={{ marginTop: "1em" }}>
                     {data.reverse().map(item => {
                         const formatDate = moment(item.date).format(
                             "MMMM Do YYYY, h:mm:ss a"
