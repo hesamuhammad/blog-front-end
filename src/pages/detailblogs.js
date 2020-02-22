@@ -1,68 +1,72 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchDataBlogs } from "../actions/blogs";
-import { Row, Col, Button, Container } from "reactstrap";
-export default class detailblogs extends Component {
-    componentDidMount() {
-        this.props.getData(this.props.match.params.id);
-    }
-    render() {
-        const { item } = this.props;
-        // const heroku = process.env.REACT_APP_URL_EXPRESS;
-        // const body = item.body;
-        return (
-            <Container>
-                <Row>
-                    <Col md={12}>
-                        <Card style={{ padding: "5%" }}>
-                            <h1
-                                style={{
-                                    textAlign: "center",
-                                    fontWeight: "bold"
-                                }}
-                            >
-                                {item.title}
-                            </h1>
-                            <h5
-                                style={{
-                                    textAlign: "center",
-                                    marginBottom: "3%"
-                                }}
-                            >
-                                {item.subTitle}
-                            </h5>
-                            <p>{item.date}</p>
-                            <img
-                                style={{
-                                    width: "100%",
-                                    marginBottom: "3%"
-                                }}
-                                // className="imageblog"
-                                src={`https://blog-database-mashes.herokuapp.com/${item.image}`}
-                                alt="blogs"
-                            />
-                            <p style={{ textAlign: "justify" }}>{item.body}</p>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
+import { getBlogById } from "../actions";
+import { withRouter } from "react-router-dom";
+import moment from "moment";
+
+function Detailblogs(props) {
+    const {
+        match: {
+            params: { id }
+        }
+    } = props;
+
+    const formatDate = moment(props.blogs.date).format(
+        "MMMM Do YYYY, h:mm:ss a"
+    );
+    console.log(props);
+
+    useEffect(() => {
+        props.getBlogById(id);
+    }, []);
+
+    return (
+        <div>
+            <h1
+                style={{
+                    textAlign: "center",
+                    fontWeight: "bold"
+                }}
+            >
+                {props.blogs.title}
+            </h1>
+            <h5
+                style={{
+                    textAlign: "center",
+                    marginBottom: "3%"
+                }}
+            >
+                {props.blogs.subTitle}
+            </h5>
+            <p>{formatDate}</p>
+            <img
+                style={{
+                    width: "100%",
+                    marginBottom: "3%"
+                }}
+                // className="imageblog"
+                src={`https://blog-database-mashes.herokuapp.com/${props.blogs.image}`}
+                alt="blogs"
+            />
+            <p style={{ textAlign: "justify" }}>{props.blogs.body}</p>
+        </div>
+    );
 }
 
 const mapStateToProps = state => {
     return {
-        data: state.blogs.editBlog
+        blogs: state.blogs
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getData: id => dispatch(fetchDataBlogs(id))
+        getBlogById: id => {
+            dispatch(getBlogById);
+        }
     };
 };
 
 export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(detailblogs)
+    connect(mapStateToProps, mapDispatchToProps)(Detailblogs)
 );

@@ -5,15 +5,17 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Blogs from "./components/Blogs";
+import Detailblogs from "./pages/detailblogs";
 import Logout from "./components/Logout";
 import Mashes from "./pages/mashes";
+import Addblog from "./pages/addblog";
 
 function App() {
     return (
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Signin />
+                    <Blogs />
                 </Route>
                 <Route path="/signup">
                     <Signup />
@@ -21,8 +23,14 @@ function App() {
                 <Route path="/blogs">
                     <Blogs />
                 </Route>
-                <Route path="/blogs">
-                    <Blogs />
+                <Route path="/blogs/:id">
+                    <Detailblogs />
+                </Route>
+                <Route path="/addblog">
+                    <Addblog />
+                </Route>
+                <Route path="/signin">
+                    <Signin />
                 </Route>
                 <Route path="/logout">
                     <Logout />

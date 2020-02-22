@@ -90,8 +90,9 @@ function SignIn(props) {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign in
+                        Login
                     </Typography>
+                    <p>to comments on my blogs</p>
                     <Formik
                         initialValues={{
                             email: "hesahesa30@icloud.com",

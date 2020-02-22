@@ -5,6 +5,7 @@ import { Row, Col, Button, Container } from "reactstrap";
 import { fetchDataBlogs } from "../actions";
 import moment from "moment";
 import Divider from "@material-ui/core/Divider";
+import { Link } from "react-router-dom";
 class Blogs extends Component {
     componentDidMount = () => {
         this.props.fetchDataBlogs();
@@ -66,7 +67,9 @@ class Blogs extends Component {
                                     <p style={{ textAlign: "justify" }}>
                                         {item.body}
                                     </p>
-
+                                    <Link to={`/blogs/${item.id}`}>
+                                        Load More
+                                    </Link>
                                     {/* <Row>
                                         <Col>
                                             <Facebook
