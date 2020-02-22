@@ -34,12 +34,12 @@ const Example = props => {
     return (
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/blogs">BLOG</NavbarBrand>
+                <NavbarBrand href="/blogs">MASHES</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/mashes">About MASHES</NavLink>
+                            <NavLink href="/mashes">About</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/signin">Login</NavLink>
